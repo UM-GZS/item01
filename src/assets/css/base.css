@@ -1,0 +1,41 @@
+@import "./normalize.css";
+
+/* root -> html根元素 */
+:root {
+  --window-width: 100%;
+  --window-background: #F6F6F6;
+  --color-text: #666;
+  --color-background: #FFFFFF;
+  --font-size: 14px;
+}
+/* 在css样式引用变量 var(--name) */
+*{
+  marign: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.u-f,
+.u-f-ac,
+.u-f-ajc {
+	display: flex;
+}
+
+.u-f-ac,
+.u-f-ajc {
+	align-items: center;
+}
+
+.u-f-ajc {
+	justify-content: center;
+}
+
+.u-f-jcsb {
+	justify-content: space-between;
+}
+.u-f1{
+	flex: 1;
+}
+.u-f-column{
+	flex-direction: column;
+}

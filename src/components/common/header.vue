@@ -39,7 +39,6 @@
   margin: 0 auto;
   width: 1200px;
   height: 100%;
-
 }
 .header_top>h2{
   color: var(--color-text);

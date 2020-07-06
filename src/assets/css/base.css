@@ -9,10 +9,12 @@
   --font-size: 14px;
 }
 /* 在css样式引用变量 var(--name) */
+
 *{
-  marign: 0;
+  margin: 0;
   padding: 0;
   text-decoration: none;
+  border: 0;
 }
 
 .u-f,
@@ -32,6 +34,9 @@
 
 .u-f-jcsb {
 	justify-content: space-between;
+}
+.u-f-jcsa{
+  justify-content: space-around;
 }
 .u-f1{
 	flex: 1;

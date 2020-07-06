@@ -59,7 +59,7 @@
                   </li>
                 </ul>
               </div>
-            <div class="content_body_right_content">
+            <div class="content_body_right_content" @click="goNew">
               <p>{{item.content}}</p>
             </div>
             </div>
@@ -67,109 +67,54 @@
 
         </div>
       </div>
-      <div class="right">
-        <div class="login">
-           <span>用户登录</span>
-           <div class="login_form">
-             <form>
-              账号：<input type="text"/><br />
-              密码：<input type="password"/>
-             </form>
-             <button type="submit">登录</button>
-           </div>
-        </div>
-        <div class="right_new">
-          <div class="right_new_head u-f-ac">
-            <span>推荐阅读</span>
-          </div>
-          <div class="right_new_content u-f u-f-jcsa u-f-ac">
-            <div class="right_new_content_left">
-              <img src="../../assets/img/index/content_1.jpg"/>
-            </div>
-            <div class="right_new_content_right">
-              <p>丽江古城</p>
-              <span>2020-07-04</span>
-            </div>
-          </div>
-           <div class="right_new_content u-f u-f-jcsa u-f-ac">
-             <div class="right_new_content_left">
-               <img src="../../assets/img/index/content_1.jpg"/>
-             </div>
-             <div class="right_new_content_right">
-               <p>丽江古城</p>
-               <span>2020-07-04</span>
-             </div>
-           </div>
-           <div class="right_new_content u-f u-f-jcsa u-f-ac">
-             <div class="right_new_content_left">
-               <img src="../../assets/img/index/content_1.jpg"/>
-             </div>
-             <div class="right_new_content_right">
-               <p>丽江古城</p>
-               <span>2020-07-04</span>
-             </div>
-           </div>
-           <div class="right_new_content u-f u-f-jcsa u-f-ac">
-             <div class="right_new_content_left">
-               <img src="../../assets/img/index/content_1.jpg"/>
-             </div>
-             <div class="right_new_content_right">
-               <p>丽江古城</p>
-               <span>2020-07-04</span>
-             </div>
-           </div>
-        </div>
-        <div class="right_new">
-          <div class="right_new_head u-f-ac">
-            <span>热门阅读</span>
-          </div>
-          <div class="right_new_content u-f u-f-jcsa u-f-ac">
-            <div class="right_new_content_left">
-              <img src="../../assets/img/index/content_1.jpg"/>
-            </div>
-            <div class="right_new_content_right">
-              <p>丽江古城</p>
-              <span>2020-07-04</span>
-            </div>
-          </div>
-           <div class="right_new_content u-f u-f-jcsa u-f-ac">
-             <div class="right_new_content_left">
-               <img src="../../assets/img/index/content_1.jpg"/>
-             </div>
-             <div class="right_new_content_right">
-               <p>丽江古城</p>
-               <span>2020-07-04</span>
-             </div>
-           </div>
-           <div class="right_new_content u-f u-f-jcsa u-f-ac">
-             <div class="right_new_content_left">
-               <img src="../../assets/img/index/content_1.jpg"/>
-             </div>
-             <div class="right_new_content_right">
-               <p>丽江古城</p>
-               <span>2020-07-04</span>
-             </div>
-           </div>
-           <div class="right_new_content u-f u-f-jcsa u-f-ac">
-             <div class="right_new_content_left">
-               <img src="../../assets/img/index/content_1.jpg"/>
-             </div>
-             <div class="right_new_content_right">
-               <p>丽江古城</p>
-               <span>2020-07-04</span>
-             </div>
-           </div>
-        </div>
-      </div>
+       <new-list :newDataOne="newDataOne" :newDataTwo="newDataTwo"></new-list>
     </div>
   </div>
 </template>
 
 <script>
+import NewList from '../../components/content/newslist.vue'
   export default {
     name: 'Index',
     data() {
       return {
+        isLogin: false,
+        newDataOne: [
+          {
+            title: "丽江古城",
+            time: "2020-07-04"
+          },
+          {
+            title: "丽江古城",
+            time: "2020-07-04"
+          },
+          {
+            title: "丽江古城",
+            time: "2020-07-04"
+          },
+          {
+            title: "丽江古城",
+            time: "2020-07-04"
+          }
+        ],
+        newDataTwo: [
+          {
+            title: "丽江古城",
+            time: "2020-07-04"
+          },
+          {
+            title: "丽江古城",
+            time: "2020-07-04"
+          },
+          {
+            title: "丽江古城",
+            time: "2020-07-04"
+          },
+          {
+            title: "丽江古城",
+            time: "2020-07-04"
+          }
+        ],
         newList: [
           {
             imgUrl: require("../../assets/img/index/content_1.jpg"),
@@ -239,6 +184,9 @@
         timer: ''
       }
     },
+    components: {
+      NewList
+    },
     created() {
       this.$nextTick(() => {
         this.timer = setInterval(() => {
@@ -247,6 +195,12 @@
       })
     },
     methods: {
+      goNew() {
+        this.$router.push('/newpage')
+      },
+      goLogin() {
+        this.$store.commit('login')
+      },
       autoPlay(i) {
         switch (i) {
           case 1:
@@ -440,78 +394,5 @@
     font-size: 14px;
     color: var(--color-text);
   }
-  .login{
-    width: 100%;
-    height: 300px;
-    background: #FFFFFF;
-    text-align: center;
-    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
-  }
-  .login>span{
-    position: relative;
-    top: 20px;
-     font-size: 20px;
-  }
-  .login_form{
-    line-height: 50px;
-    margin: 50px auto;
-    padding: 30px;
-    height: 150px;
-  }
 
-  .login_form>form>input{
-    width: 250px;
-    height: 30px;
-    background: #e4e4e4;
-    padding: 2px 10px;
-    border-radius: 25px;
-  }
-  .login_form>button{
-    margin-top: 10px;
-    float: right;
-    width: 100px;
-    font-size: 18px;
-    padding: 10px;
-    background: #42B983;
-    color: #FFFFFF;
-    border: 0;
-    border-radius: 25px;
-  }
-  .right_new{
-    margin-top: 15px;
-    width: 100%;
-    background: #FFFFFF;
-    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
-  }
-  .right_new_head{
-    width: 100%;
-    height: 40px;
-    background: #F5F5F5;
-    color: var(--color-text);
-  }
-  .right_new_head>span{
-     padding-left: 10px;
-  }
-  .right_new_content{
-    width: 100%;
-    height: 100px;
-    border-bottom: 1px solid #F4F4F4;
-  }
-  .right_new_content_left{
-    width: 100px;
-    height: 70px;
-  }
-  .right_new_content_right{
-    width: 250px;
-    height: 80px;
-    line-height: 30px;
-    color: var(--color-text);
-  }
-  .right_new_content_left>img{
-    width: 100%;
-    height: 100%;
-  }
-  .right_new_content_right>span{
-     font-size: 12px;
-  }
 </style>

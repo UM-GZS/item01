@@ -6,6 +6,8 @@ import Page1 from '../views/page1/Page1.vue'
 import Page2 from '../views/page2/Page2.vue'
 import Page3 from '../views/page3/Page3.vue'
 import Page4 from '../views/page4/Page4.vue'
+import NewPage from '../components/content/newpage.vue'
+import Login from '../views/login/Login.vue'
 //1.安装插件
 Vue.use(VueRouter)
 
@@ -35,6 +37,14 @@ const router = new VueRouter({
     {
       path: '/page4',
       component: Page4
+    },
+    {
+      path: '/newpage',
+      component: NewPage
+    },
+    {
+      path: '/login',
+      component: Login
     }
   ],
   mode: 'history',

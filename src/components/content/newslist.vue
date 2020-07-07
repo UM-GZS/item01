@@ -1,6 +1,6 @@
 <template>
   <div id="newlist">
-    <div class="right_top">
+    <div class="right_top" v-show="showLogin">
       <div class="login" v-show="!$store.state.isLogin">
         <p>
           <img src="../../assets/img/index/user.jpg"/>
@@ -61,7 +61,8 @@
   export default {
     props: {
       newDataOne: Array,
-      newDataTwo: Array
+      newDataTwo: Array,
+      showLogin: Boolean
     },
     name: 'NewList',
     methods: {

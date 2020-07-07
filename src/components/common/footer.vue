@@ -20,7 +20,6 @@
 
 <style>
 #footer {
-  margin-top: 50px;
   width: var(--window-width);
   height: 100px;
   background: var(--color-background);

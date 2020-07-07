@@ -29,51 +29,17 @@
         </div>
         <div class="content">
           <span>最新发布</span>
-          <div class="content_body u-f u-f-jcsa" v-for="(item,index) in newList" :key="index">
-            <div class="content_body_left">
-              <img :src="item.imgUrl"/>
-            </div>
-            <div class="content_body_right">
-              <span>{{item.title}}</span>
-              <div class="content_body_right_tag">
-                <ul>
-                  <li>
-                    <i class="iconfont icon-shizhong"></i>
-                    <span>{{item.time}}</span>
-                  </li>
-                  <li>
-                    <i class="iconfont icon-yonghu"></i>
-                    <span>{{item.user}}</span>
-                  </li>
-                  <li>
-                    <i class="iconfont icon-pinglun"></i>
-                    <span>{{item.pl}}</span>
-                  </li>
-                  <li>
-                    <i class="iconfont icon-liulan"></i>
-                    <span>{{item.look}}</span>
-                  </li>
-                  <li>
-                    <i class="iconfont icon-zan"></i>
-                    <span>{{item.good}}</span>
-                  </li>
-                </ul>
-              </div>
-            <div class="content_body_right_content" @click="goNew">
-              <p>{{item.content}}</p>
-            </div>
-            </div>
-          </div>
-
+          <page-list :newList="newList"></page-list>
         </div>
       </div>
-       <new-list :newDataOne="newDataOne" :newDataTwo="newDataTwo"></new-list>
+       <new-list :newDataOne="newDataOne" :newDataTwo="newDataTwo" :showLogin="true"></new-list>
     </div>
   </div>
 </template>
 
 <script>
 import NewList from '../../components/content/newslist.vue'
+import PageList from '../../components/content/pagelist.vue'
   export default {
     name: 'Index',
     data() {
@@ -185,7 +151,8 @@ import NewList from '../../components/content/newslist.vue'
       }
     },
     components: {
-      NewList
+      NewList,
+      PageList
     },
     created() {
       this.$nextTick(() => {
@@ -195,9 +162,6 @@ import NewList from '../../components/content/newslist.vue'
       })
     },
     methods: {
-      goNew() {
-        this.$router.push('/newpage')
-      },
       goLogin() {
         this.$store.commit('login')
       },
@@ -241,7 +205,7 @@ import NewList from '../../components/content/newslist.vue'
   .header {
     margin: 0 auto;
     width: 1200px;
-    padding: 0px 0px;
+    margin-bottom: 40px;
   }
 
   .left {

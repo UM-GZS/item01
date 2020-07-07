@@ -73,6 +73,7 @@
     margin: 0 auto;
     width: 1200px;
     height: 800px;
+    margin-bottom: 20px;
     background: url(../../assets/img/index/banner.jpg) no-repeat 100% ;
   }
   .login_body_box{
@@ -109,9 +110,13 @@
     margin-right: 20px;
     color: rgba(66,185,131, 0.8);
   }
-  .login_body_input>form>p:last-child>a{
-    padding: 10px 80px;
+  .login_body_input>form>p:last-child{
+    margin: 10px auto;
+    width: 330px;
     background: #42B983;
+  }
+  .login_body_input>form>p:last-child>a{
+    padding: 13px 145px;
     color: #FFFFFF;
   }
 </style>

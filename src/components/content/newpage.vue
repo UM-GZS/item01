@@ -34,7 +34,7 @@
           </p>
         </div>
       </div>
-      <new-list :newDataOne="newDataOne" :newDataTwo="newDataTwo"></new-list>
+      <new-list :newDataOne="newDataOne" :newDataTwo="newDataTwo" :showLogin="false"></new-list>
     </div>
   </div>
 </template>
@@ -96,6 +96,7 @@
   .header_s {
     margin: 0 auto;
     width: 1200px;
+    margin-bottom: 20px;
   }
   .left_s {
     width: 800px;

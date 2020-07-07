@@ -7,16 +7,13 @@
               <router-link to="/index">首页</router-link>
             </li>
             <li>
-              <router-link to="/page1">文章</router-link>
+              <router-link to="/page1">日常分享</router-link>
             </li>
             <li>
-              <router-link to="/page2">图片</router-link>
+              <router-link to="/page2">经验分享</router-link>
             </li>
             <li>
-              <router-link to="/page3">视频</router-link>
-            </li>
-            <li>
-              <router-link to="/page4">关于</router-link>
+              <router-link to="/page3">留言板</router-link>
             </li>
           </ul>
       </div>
